@@ -2,6 +2,8 @@
 
 require('../vendor/autoload.php');
 
+header('Content-Type: application/pdf');
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
