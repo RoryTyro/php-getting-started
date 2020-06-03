@@ -2,7 +2,7 @@
 
 require('../vendor/autoload.php');
 
-header('Content-Type: application/pdf');
+
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -21,6 +21,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
+  header('custom-header: imaheader');
   return $app['twig']->render('index.twig');
 });
 
