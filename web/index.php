@@ -21,7 +21,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  header('custom-header: imaheader');
+  header('x-frame-options: SAMEORIGIN');
   return $app['twig']->render('index.twig');
 });
 
